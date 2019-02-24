@@ -1,3 +1,4 @@
+"" This is Jonathan Tamsut's .vimrc file
 set shell=bash 
 syntax enable
 
@@ -39,3 +40,8 @@ set diffopt+=vertical
 let &t_SI="\e[5 q"
 let &t_EI="\e[1 q"
 
+" Arrow keys are unacceptable 
+map <Left> :echo "no!"<cr>
+map <Right> :echo "no!"<cr>
+map <Up> :echo "no!"<cr>
+map <Down> :echo "no!"<cr>
