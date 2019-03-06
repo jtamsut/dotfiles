@@ -4,7 +4,7 @@ syntax enable
 
 " General 
 set backspace=2
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Tab indenting
 set tabstop=2
@@ -45,3 +45,19 @@ map <Left> :echo "no!"<cr>
 map <Right> :echo "no!"<cr>
 map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
+
+" Wrap on 80 characters in Markdown
+set textwidth=80
+
+" Spell check 
+set spelllang=en
+set spellfile=$HOME/dotfiles/vim/spell/en.utf-8.add
+set spell
+
+" Nerdtree settings 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:NERDTreeNodeDelimiter = "\u00a0"
+
+" No swp files 
+set noswapfile
