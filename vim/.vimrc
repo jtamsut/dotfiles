@@ -21,6 +21,8 @@ set number
 set title 
 set cursorline
 set laststatus=2
+" Will make new window in horizontal split appear below by default
+set splitbelow
 
 " Searching
 set hlsearch
@@ -49,15 +51,14 @@ map <Down> :echo "no!"<cr>
 " Wrap on 80 characters in Markdown
 set textwidth=80
 
-" Spell check 
-set spelllang=en
-set spellfile=$HOME/dotfiles/vim/spell/en.utf-8.add
-set spell
-
 " Nerdtree settings 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeNodeDelimiter = "\u00a0"
+let g:NERDTreeWinSize=40
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " No swp files 
 set noswapfile
