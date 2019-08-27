@@ -49,13 +49,14 @@ map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
 
 " Wrap on 80 characters in Markdown
-set textwidth=80
+set textwidth=120
 
 " Nerdtree settings 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeWinSize=40
+let NERDTreeShowHidden=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
