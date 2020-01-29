@@ -72,3 +72,7 @@ nnoremap <leader>= :wincmd =<cr>
 
 " ctrlp.vim settings
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+    \ 'AcceptSelection("t")': ['<cr>'],
+    \ }
