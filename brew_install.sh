@@ -2,7 +2,6 @@
 
 brew install \
   ack \
-  asdf \
   awscli \
   git \
   htop \
