@@ -12,4 +12,5 @@ brew install \
   redis \
   the_silver_searcher \
   tree \
+  watch \
   wget
