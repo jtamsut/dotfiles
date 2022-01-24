@@ -1,5 +1,5 @@
 "" This is Jonathan Tamsut's .vimrc file
-set shell=bash 
+set shell=zsh
 syntax enable
 
 " General 
@@ -50,29 +50,5 @@ map <Right> :echo "no!"<cr>
 map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
 
-" Nerdtree settings 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let g:NERDTreeNodeDelimiter = "\u00a0"
-let g:NERDTreeWinSize=40
-let NERDTreeShowHidden=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
 " No swp files 
 set noswapfile
-
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
-" zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
-
-" ctrlp.vim settings
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-    \ 'AcceptSelection("t")': ['<cr>'],
-    \ }
